@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://bas4g3bjt325p"]
+
+[ext_resource type="Texture2D" uid="uid://dw14jj1r6ssly" path="res://assets/enemy cell.png" id="1_3vyb7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g2els"]
+atlas = ExtResource("1_3vyb7")
+region = Rect2(0, 0, 354, 336)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_qhqgy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g2els")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dqkch"]
+
+[node name="Player" type="CharacterBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.50980395)
+position = Vector2(6, -2)
+sprite_frames = SubResource("SpriteFrames_qhqgy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(14.84, 14.84)
+shape = SubResource("CircleShape2D_dqkch")
+metadata/_edit_lock_ = true

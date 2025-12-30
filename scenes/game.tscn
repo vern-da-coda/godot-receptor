@@ -1,0 +1,43 @@
+[gd_scene load_steps=5 format=3 uid="uid://ca2m0xk05jw50"]
+
+[ext_resource type="PackedScene" uid="uid://smm6qi55ayyb" path="res://scenes/background.tscn" id="1_yqjtg"]
+[ext_resource type="PackedScene" uid="uid://1wgh3ryl34ds" path="res://scenes/cell.tscn" id="2_yqjtg"]
+[ext_resource type="Script" uid="uid://718ba3edlc3k" path="res://scripts/cell.gd" id="3_lnu2h"]
+[ext_resource type="PackedScene" uid="uid://bas4g3bjt325p" path="res://scenes/player.tscn" id="4_lbhrr"]
+
+[node name="Game" type="Node2D"]
+
+[node name="Background" parent="." instance=ExtResource("1_yqjtg")]
+position = Vector2(-589.00006, -336)
+scale = Vector2(0.4273678, 0.43604377)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+rotation = -3.1415925
+scale = Vector2(114.35355, -3.0341375)
+
+[node name="Cell" parent="." instance=ExtResource("2_yqjtg")]
+position = Vector2(-434, 159)
+script = ExtResource("3_lnu2h")
+
+[node name="Cell2" parent="." instance=ExtResource("2_yqjtg")]
+position = Vector2(-78, -45)
+script = ExtResource("3_lnu2h")
+
+[node name="Cell3" parent="." instance=ExtResource("2_yqjtg")]
+position = Vector2(340, 262)
+script = ExtResource("3_lnu2h")
+
+[node name="Cell4" parent="." instance=ExtResource("2_yqjtg")]
+position = Vector2(134, -55)
+script = ExtResource("3_lnu2h")
+
+[node name="Cell5" parent="." instance=ExtResource("2_yqjtg")]
+position = Vector2(216, 133)
+script = ExtResource("3_lnu2h")
+
+[node name="Cell6" parent="." instance=ExtResource("2_yqjtg")]
+position = Vector2(-220, 11)
+script = ExtResource("3_lnu2h")
+
+[node name="Player" parent="." instance=ExtResource("4_lbhrr")]
+position = Vector2(8, 335)

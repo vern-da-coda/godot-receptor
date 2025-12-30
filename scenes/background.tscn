@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://smm6qi55ayyb"]
+
+[ext_resource type="Texture2D" uid="uid://bdsvh4w0e46as" path="res://assets/background 01.png" id="1_bkp1e"]
+
+[node name="Background" type="Node2D"]
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_bkp1e")

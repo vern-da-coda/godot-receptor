@@ -1,0 +1,56 @@
+[gd_scene load_steps=8 format=3 uid="uid://1wgh3ryl34ds"]
+
+[ext_resource type="Texture2D" uid="uid://b0fas7fhwrskh" path="res://assets/enemy cell resource background.png" id="1_0s7o3"]
+[ext_resource type="Texture2D" uid="uid://dw14jj1r6ssly" path="res://assets/enemy cell.png" id="2_0s7o3"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nm02e"]
+radius = 53.032597
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0s7o3"]
+atlas = ExtResource("1_0s7o3")
+region = Rect2(0, 0, 354, 336)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ecwuj"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0s7o3")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nm02e"]
+atlas = ExtResource("2_0s7o3")
+region = Rect2(0, 0, 354, 336)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0s7o3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nm02e")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Cell" type="CharacterBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(0.6411151, 0.6411151)
+shape = SubResource("CircleShape2D_nm02e")
+
+[node name="Core" type="AnimatedSprite2D" parent="."]
+rotation = -5.6227694
+scale = Vector2(0.25432262, 0.25432262)
+sprite_frames = SubResource("SpriteFrames_ecwuj")
+autoplay = "default"
+frame_progress = 0.12582527
+
+[node name="Shell" type="AnimatedSprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.5882353)
+position = Vector2(1.0000002, 0)
+scale = Vector2(0.23880997, 0.23880997)
+sprite_frames = SubResource("SpriteFrames_0s7o3")
